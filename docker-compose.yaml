@@ -1,0 +1,17 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: thunderpay-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: adminpass
+      POSTGRES_DB: thunderpay
+    volumes:
+      - thunderpay_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"    
+
+volumes:
+  thunderpay_data:
+    
