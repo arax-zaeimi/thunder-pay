@@ -1,5 +1,6 @@
 using ThunderPay.Database;
 
+namespace ThunderPay.ApiService;
 public class Program
 {
     private static void Main(string[] args)
