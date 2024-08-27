@@ -9,12 +9,26 @@ public class DatabaseIoC
 {
     public static IServiceCollection RegisterDatabaseServices(IServiceCollection services)
     {
-        
-
         services.AddDbContext<ThunderPayDbContext>(options =>
             options.UseNpgsql(ConstructDbConnection()));
 
         return services;
+    }
+
+    public static void Configure(IServiceProvider serviceProvider)
+    {
+        using var scope = serviceProvider.CreateScope();
+        var dbContext = scope.ServiceProvider.GetRequiredService<ThunderPayDbContext>();
+
+        try
+        {
+            dbContext.Database.Migrate();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An error occurred while applying migrations: {ex.Message}");
+            throw;
+        }
     }
 
     private static string ConstructDbConnection()
@@ -32,5 +46,5 @@ public class DatabaseIoC
         string connectionString = $"Host={dbHost};Port={dbPort};Database={dbName};Username={dbUsername};Password={dbPassword};";
 
         return connectionString;
-    }    
+    }
 }

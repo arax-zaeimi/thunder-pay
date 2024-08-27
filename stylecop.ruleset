@@ -180,6 +180,7 @@
     <Rule Id="SX1101" Action="None" />
   </Rules>
   <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
+    <Rule Id="SA0001" Action="None" />
     <Rule Id="SA1000" Action="None" />
     <Rule Id="SA1009" Action="None" />
     <Rule Id="SA1010" Action="None" />

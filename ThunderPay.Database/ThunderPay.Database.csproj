@@ -1,5 +1,4 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
 	<PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -29,7 +28,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ThunderPay.Domain\ThunderPay.Domain.csproj" />
-    <ProjectReference Include="..\ThunderPay.Shared\ThunderPay.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>
