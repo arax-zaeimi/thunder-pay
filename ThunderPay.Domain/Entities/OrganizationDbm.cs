@@ -1,5 +1,8 @@
-﻿namespace ThunderPay.Entities.Entities;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
+namespace ThunderPay.Domain.Entities;
+
+[Table("organizations")]
 public class OrganizationDbm
 {
     public int Id { get; set; }

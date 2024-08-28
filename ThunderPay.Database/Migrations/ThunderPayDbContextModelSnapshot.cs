@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using ThunderPay.Entities;
+using ThunderPay.Database;
 
 #nullable disable
 
@@ -22,7 +22,7 @@ namespace ThunderPay.Database.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("ThunderPay.Entities.Entities.MerchantDbm", b =>
+            modelBuilder.Entity("ThunderPay.Domain.Entities.MerchantDbm", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -44,7 +44,7 @@ namespace ThunderPay.Database.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("UniqueCode")
+                    b.Property<string>("UniqueId")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -52,12 +52,16 @@ namespace ThunderPay.Database.Migrations
 
                     b.HasIndex("OrganizationDbmId");
 
-                    b.HasIndex("OrganizationId");
+                    b.HasIndex("UniqueId")
+                        .IsUnique();
 
-                    b.ToTable("Merchants");
+                    b.HasIndex("OrganizationId", "DisplayName")
+                        .IsUnique();
+
+                    b.ToTable("merchants");
                 });
 
-            modelBuilder.Entity("ThunderPay.Entities.Entities.OrganizationDbm", b =>
+            modelBuilder.Entity("ThunderPay.Domain.Entities.OrganizationDbm", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -71,16 +75,16 @@ namespace ThunderPay.Database.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Organizations");
+                    b.ToTable("organizations");
                 });
 
-            modelBuilder.Entity("ThunderPay.Entities.Entities.MerchantDbm", b =>
+            modelBuilder.Entity("ThunderPay.Domain.Entities.MerchantDbm", b =>
                 {
-                    b.HasOne("ThunderPay.Entities.Entities.OrganizationDbm", null)
+                    b.HasOne("ThunderPay.Domain.Entities.OrganizationDbm", null)
                         .WithMany("Merchants")
                         .HasForeignKey("OrganizationDbmId");
 
-                    b.HasOne("ThunderPay.Entities.Entities.OrganizationDbm", "Organization")
+                    b.HasOne("ThunderPay.Domain.Entities.OrganizationDbm", "Organization")
                         .WithMany()
                         .HasForeignKey("OrganizationId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -89,7 +93,7 @@ namespace ThunderPay.Database.Migrations
                     b.Navigation("Organization");
                 });
 
-            modelBuilder.Entity("ThunderPay.Entities.Entities.OrganizationDbm", b =>
+            modelBuilder.Entity("ThunderPay.Domain.Entities.OrganizationDbm", b =>
                 {
                     b.Navigation("Merchants");
                 });

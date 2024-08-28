@@ -24,7 +24,7 @@ public class Program
 
         app.MapDefaultEndpoints();
 
-        DatabaseIoC.Configure(app.Services);
+        DatabaseIoC.Initialize(app.Services);
 
         app.Run();
     }

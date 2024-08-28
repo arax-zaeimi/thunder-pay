@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ThunderPay.Entities.Entities;
+using ThunderPay.Domain.Entities;
 
-namespace ThunderPay.Entities;
+namespace ThunderPay.Database;
 
 public class ThunderPayDbContext(DbContextOptions<ThunderPayDbContext> options) 
     : DbContext(options)

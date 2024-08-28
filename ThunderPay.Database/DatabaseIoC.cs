@@ -15,14 +15,16 @@ public class DatabaseIoC
         return services;
     }
 
-    public static void Configure(IServiceProvider serviceProvider)
+    public static void Initialize(IServiceProvider serviceProvider)
     {
         using var scope = serviceProvider.CreateScope();
         var dbContext = scope.ServiceProvider.GetRequiredService<ThunderPayDbContext>();
 
         try
         {
+            Console.WriteLine($"Pending migrations '{dbContext.Database.GetPendingMigrations().Count()}'");
             dbContext.Database.Migrate();
+            Console.WriteLine($"Migrations applied to database. Pending migrations '{dbContext.Database.GetPendingMigrations().Count()}'");
         }
         catch (Exception ex)
         {
@@ -33,8 +35,6 @@ public class DatabaseIoC
 
     private static string ConstructDbConnection()
     {
-        Env.Load();
-
         // Retrieve environment variables
         string dbHost = Env.GetString("DB_HOST") ?? throw new Exception("DB_HOST not found");
         string dbPort = Env.GetString("DB_PORT") ?? throw new Exception("DB_PORT not found");

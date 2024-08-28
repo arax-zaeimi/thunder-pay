@@ -1,9 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using ThunderPay.Entities.Enums;
 
-namespace ThunderPay.Entities.Entities;
+namespace ThunderPay.Domain.Entities;
 
+[Table("merchants")]
 public class MerchantDbm
 {
     [Key]
@@ -15,7 +17,7 @@ public class MerchantDbm
     public string DisplayName { get; set; } = null!;
 
     [Required]
-    public string UniqueCode { get; set; } = null!;
+    public string UniqueId { get; set; } = null!;
 
     [Required]
     public int OrganizationId { get; set; }
@@ -28,6 +30,9 @@ public class MerchantDbm
             .HasOne(q => q.Organization)
             .WithMany()
             .HasForeignKey(q => q.OrganizationId);
+
+        builder.HasIndex(q => q.UniqueId).IsUnique();
+        builder.HasIndex(q => new { q.OrganizationId, q.DisplayName }).IsUnique();
 
         builder.Property(q => q.Status).HasConversion<string>();
     }

@@ -12,7 +12,7 @@ namespace ThunderPay.Database.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Organizations",
+                name: "organizations",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
@@ -21,56 +21,63 @@ namespace ThunderPay.Database.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Organizations", x => x.Id);
+                    table.PrimaryKey("PK_organizations", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Merchants",
+                name: "merchants",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Status = table.Column<string>(type: "text", nullable: false),
                     DisplayName = table.Column<string>(type: "text", nullable: false),
-                    UniqueCode = table.Column<string>(type: "text", nullable: false),
+                    UniqueId = table.Column<string>(type: "text", nullable: false),
                     OrganizationId = table.Column<int>(type: "integer", nullable: false),
                     OrganizationDbmId = table.Column<int>(type: "integer", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Merchants", x => x.Id);
+                    table.PrimaryKey("PK_merchants", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Merchants_Organizations_OrganizationDbmId",
+                        name: "FK_merchants_organizations_OrganizationDbmId",
                         column: x => x.OrganizationDbmId,
-                        principalTable: "Organizations",
+                        principalTable: "organizations",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_Merchants_Organizations_OrganizationId",
+                        name: "FK_merchants_organizations_OrganizationId",
                         column: x => x.OrganizationId,
-                        principalTable: "Organizations",
+                        principalTable: "organizations",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Merchants_OrganizationDbmId",
-                table: "Merchants",
+                name: "IX_merchants_OrganizationDbmId",
+                table: "merchants",
                 column: "OrganizationDbmId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Merchants_OrganizationId",
-                table: "Merchants",
-                column: "OrganizationId");
+                name: "IX_merchants_OrganizationId_DisplayName",
+                table: "merchants",
+                columns: new[] { "OrganizationId", "DisplayName" },
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_merchants_UniqueId",
+                table: "merchants",
+                column: "UniqueId",
+                unique: true);
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Merchants");
+                name: "merchants");
 
             migrationBuilder.DropTable(
-                name: "Organizations");
+                name: "organizations");
         }
     }
 }
