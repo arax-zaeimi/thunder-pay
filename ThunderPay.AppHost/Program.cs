@@ -1,9 +1,9 @@
 var builder = DistributedApplication.CreateBuilder(args);
 
-var apiService = builder.AddProject<Projects.ThunderPay_ApiService>("apiservice");
+var api = builder.AddProject<Projects.ThunderPay_Api>("api");
 
 builder.AddProject<Projects.ThunderPay_Web>("webfrontend")
     .WithExternalHttpEndpoints()
-    .WithReference(apiService);
+    .WithReference(api);
 
 builder.Build().Run();

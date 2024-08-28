@@ -17,7 +17,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ThunderPay.ApiService\ThunderPay.ApiService.csproj" />
+    <ProjectReference Include="..\ThunderPay.Api\ThunderPay.Api.csproj" />
     <ProjectReference Include="..\ThunderPay.Web\ThunderPay.Web.csproj" />
   </ItemGroup>
 

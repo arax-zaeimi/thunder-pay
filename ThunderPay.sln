@@ -6,8 +6,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThunderPay.AppHost", "Thund
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThunderPay.ServiceDefaults", "ThunderPay.ServiceDefaults\ThunderPay.ServiceDefaults.csproj", "{701352E1-22DF-4E68-A30A-4EAE737B8750}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThunderPay.ApiService", "ThunderPay.ApiService\ThunderPay.ApiService.csproj", "{F5AC9342-1793-4396-8038-4F7766469B65}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThunderPay.Web", "ThunderPay.Web\ThunderPay.Web.csproj", "{8F7EEAD4-8051-4BF9-8CC4-0834A954DDCB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThunderPay.Database", "ThunderPay.Database\ThunderPay.Database.csproj", "{CBDB1DB8-AF08-4154-AEDA-AAD5E80C9A92}"
@@ -23,6 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThunderPay.Domain", "ThunderPay.Domain\ThunderPay.Domain.csproj", "{82BA9829-08BF-42DE-ABE3-0B22DB4E1143}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThunderPay.Api", "ThunderPay.Api\ThunderPay.Api.csproj", "{D9CD2037-144A-45C8-A078-F24C93E87E32}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,10 +37,6 @@ Global
 		{701352E1-22DF-4E68-A30A-4EAE737B8750}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{701352E1-22DF-4E68-A30A-4EAE737B8750}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{701352E1-22DF-4E68-A30A-4EAE737B8750}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F5AC9342-1793-4396-8038-4F7766469B65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F5AC9342-1793-4396-8038-4F7766469B65}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F5AC9342-1793-4396-8038-4F7766469B65}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F5AC9342-1793-4396-8038-4F7766469B65}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8F7EEAD4-8051-4BF9-8CC4-0834A954DDCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8F7EEAD4-8051-4BF9-8CC4-0834A954DDCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F7EEAD4-8051-4BF9-8CC4-0834A954DDCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -53,6 +49,10 @@ Global
 		{82BA9829-08BF-42DE-ABE3-0B22DB4E1143}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82BA9829-08BF-42DE-ABE3-0B22DB4E1143}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82BA9829-08BF-42DE-ABE3-0B22DB4E1143}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9CD2037-144A-45C8-A078-F24C93E87E32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9CD2037-144A-45C8-A078-F24C93E87E32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9CD2037-144A-45C8-A078-F24C93E87E32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9CD2037-144A-45C8-A078-F24C93E87E32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
