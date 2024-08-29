@@ -1,3 +1,4 @@
+using ThunderPay.Application;
 using ThunderPay.Database;
 
 namespace ThunderPay.Api;
@@ -16,6 +17,7 @@ public class Program
         builder.Services.AddProblemDetails();
 
         DatabaseIoC.RegisterDatabaseServices(builder.Services);
+        ApplicationIoC.RegisterServices(builder.Services);
 
         var app = builder.Build();
 
