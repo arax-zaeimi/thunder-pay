@@ -3,5 +3,6 @@
 namespace ThunderPay.Domain.Queriers;
 public interface IOrganizationQuerier
 {
+    Task<List<OrganizationDto>> GetAll();
     Task<OrganizationDto> GetById(int id);
 }

@@ -12,4 +12,11 @@ public class OrganizationQuerier(ThunderPayDbContext dbContext) : IOrganizationQ
         var organization = await dbContext.Organizations.FirstAsync(q => q.Id == id);
         return OrganizationDtoMapper.Map(organization);
     }
+
+    public async Task<List<OrganizationDto>> GetAll()
+    {
+        return await dbContext.Organizations
+            .Select(q => OrganizationDtoMapper.Map(q))
+            .ToListAsync();
+    }
 }
