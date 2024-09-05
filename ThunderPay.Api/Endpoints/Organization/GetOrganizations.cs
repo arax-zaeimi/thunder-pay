@@ -1,10 +1,9 @@
-﻿using Microsoft.AspNetCore.Http.HttpResults;
-using ThunderPay.Api.Abstractions;
+﻿using ThunderPay.Api.Abstractions;
 using ThunderPay.Domain.Queriers;
 
 namespace ThunderPay.Api.Endpoints.Organization;
 
-public class Get : IEndpoint
+public class GetOrganizations : IEndpoint
 {
     public void MapEndpoint(IEndpointRouteBuilder app)
     {

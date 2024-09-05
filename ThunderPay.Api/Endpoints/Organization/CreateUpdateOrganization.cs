@@ -6,7 +6,7 @@ using ThunderPay.Domain.UseCases;
 
 namespace ThunderPay.Api.Endpoints.Organization;
 
-public class Post : IEndpoint
+public class CreateUpdateOrganization : IEndpoint
 {
     public void MapEndpoint(IEndpointRouteBuilder app)
     {
