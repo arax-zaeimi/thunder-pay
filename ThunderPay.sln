@@ -10,7 +10,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThunderPay.Web", "ThunderPa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThunderPay.Database", "ThunderPay.Database\ThunderPay.Database.csproj", "{CBDB1DB8-AF08-4154-AEDA-AAD5E80C9A92}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0A60008D-2DE9-45C1-985B-FB1993ECFA89}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Solution Items", "_Solution Items", "{0A60008D-2DE9-45C1-985B-FB1993ECFA89}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		docker-compose.yaml = docker-compose.yaml
@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThunderPay.Domain", "Thunde
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThunderPay.Api", "ThunderPay.Api\ThunderPay.Api.csproj", "{D9CD2037-144A-45C8-A078-F24C93E87E32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThunderPay.Application", "ThunderPay.Application\ThunderPay.Application.csproj", "{26A3E17B-8E3A-4697-9E44-A610D1ECC804}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThunderPay.Application", "ThunderPay.Application\ThunderPay.Application.csproj", "{26A3E17B-8E3A-4697-9E44-A610D1ECC804}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{5CB38E0C-B63F-4EEA-A5D7-50910FFF3383}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -62,6 +64,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8F7EEAD4-8051-4BF9-8CC4-0834A954DDCB} = {5CB38E0C-B63F-4EEA-A5D7-50910FFF3383}
+		{D9CD2037-144A-45C8-A078-F24C93E87E32} = {5CB38E0C-B63F-4EEA-A5D7-50910FFF3383}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6362A830-3804-4ABB-ADD8-6E112023CB6A}
