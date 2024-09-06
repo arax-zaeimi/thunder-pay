@@ -10,7 +10,7 @@ public class CreateUpdateOrganization : IEndpoint
 {
     public void MapEndpoint(IEndpointRouteBuilder app)
     {
-        app.MapPost("/organizations/", async ([FromBody]OrganizationDto dto, IOrganizationUseCases useCases) =>
+        app.MapPost("organizations/", async ([FromBody]OrganizationDto dto, IOrganizationUseCases useCases) =>
         {
             try
             {

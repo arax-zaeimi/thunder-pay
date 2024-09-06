@@ -7,7 +7,7 @@ public class GetOrganizations : IEndpoint
 {
     public void MapEndpoint(IEndpointRouteBuilder app)
     {
-        app.MapGet("/organizations/", async (IOrganizationQuerier querier) =>
+        app.MapGet("organizations/", async (IOrganizationQuerier querier) =>
         {
             var organizations = await querier.GetAll();
 
