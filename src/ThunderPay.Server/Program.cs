@@ -11,8 +11,6 @@ public class Program
 
         var builder = WebApplication.CreateBuilder(args);
 
-        builder.AddServiceDefaults();
-
         builder.Services.AddProblemDetails();
 
         DatabaseIoC.RegisterDatabaseServices(builder.Services);
@@ -23,7 +21,6 @@ public class Program
         var app = builder.Build();
 
         app.UseExceptionHandler();
-        app.MapDefaultEndpoints();
 
         DatabaseIoC.Initialize(app.Services);
 

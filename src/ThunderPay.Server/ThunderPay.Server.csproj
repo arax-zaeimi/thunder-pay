@@ -32,7 +32,6 @@
   <ItemGroup>
     <ProjectReference Include="..\ThunderPay.Application\ThunderPay.Application.csproj" />
     <ProjectReference Include="..\ThunderPay.Database\ThunderPay.Database.csproj" />
-    <ProjectReference Include="..\ThunderPay.ServiceDefaults\ThunderPay.ServiceDefaults.csproj" />
   </ItemGroup>
 
 </Project>

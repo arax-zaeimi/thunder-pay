@@ -2,14 +2,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThunderPay.AppHost", "ThunderPay.AppHost\ThunderPay.AppHost.csproj", "{E371E194-E103-4E23-A393-F8A1F96BC08F}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThunderPay.ServiceDefaults", "ThunderPay.ServiceDefaults\ThunderPay.ServiceDefaults.csproj", "{701352E1-22DF-4E68-A30A-4EAE737B8750}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThunderPay.Web", "ThunderPay.Web\ThunderPay.Web.csproj", "{8F7EEAD4-8051-4BF9-8CC4-0834A954DDCB}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThunderPay.Database", "ThunderPay.Database\ThunderPay.Database.csproj", "{CBDB1DB8-AF08-4154-AEDA-AAD5E80C9A92}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Solution Items", "_Solution Items", "{0A60008D-2DE9-45C1-985B-FB1993ECFA89}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
@@ -19,13 +11,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Solution Items", "_Solutio
 		stylecop.ruleset = stylecop.ruleset
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThunderPay.Domain", "ThunderPay.Domain\ThunderPay.Domain.csproj", "{82BA9829-08BF-42DE-ABE3-0B22DB4E1143}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{95A0FF45-6596-45F9-984D-A1E1AD27AB51}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThunderPay.Api", "ThunderPay.Api\ThunderPay.Api.csproj", "{D9CD2037-144A-45C8-A078-F24C93E87E32}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{67519B42-5BCC-48F9-BA45-CF3C6169AC54}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThunderPay.Application", "ThunderPay.Application\ThunderPay.Application.csproj", "{26A3E17B-8E3A-4697-9E44-A610D1ECC804}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThunderPay.Domain", "src\ThunderPay.Domain\ThunderPay.Domain.csproj", "{C33EA998-C211-4A32-90E5-1A1CE8F2ED29}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{5CB38E0C-B63F-4EEA-A5D7-50910FFF3383}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThunderPay.Database", "src\ThunderPay.Database\ThunderPay.Database.csproj", "{5396FB83-BD55-4D9D-8281-F7A419836E75}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThunderPay.Application", "src\ThunderPay.Application\ThunderPay.Application.csproj", "{2147B0FF-03C7-455B-9DA9-732AA65153E7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThunderPay.Server", "src\ThunderPay.Server\ThunderPay.Server.csproj", "{F8D68125-1BED-4579-BAB7-9A64BB2D7457}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,41 +29,31 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E371E194-E103-4E23-A393-F8A1F96BC08F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E371E194-E103-4E23-A393-F8A1F96BC08F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E371E194-E103-4E23-A393-F8A1F96BC08F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E371E194-E103-4E23-A393-F8A1F96BC08F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{701352E1-22DF-4E68-A30A-4EAE737B8750}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{701352E1-22DF-4E68-A30A-4EAE737B8750}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{701352E1-22DF-4E68-A30A-4EAE737B8750}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{701352E1-22DF-4E68-A30A-4EAE737B8750}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8F7EEAD4-8051-4BF9-8CC4-0834A954DDCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8F7EEAD4-8051-4BF9-8CC4-0834A954DDCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8F7EEAD4-8051-4BF9-8CC4-0834A954DDCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8F7EEAD4-8051-4BF9-8CC4-0834A954DDCB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CBDB1DB8-AF08-4154-AEDA-AAD5E80C9A92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CBDB1DB8-AF08-4154-AEDA-AAD5E80C9A92}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CBDB1DB8-AF08-4154-AEDA-AAD5E80C9A92}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CBDB1DB8-AF08-4154-AEDA-AAD5E80C9A92}.Release|Any CPU.Build.0 = Release|Any CPU
-		{82BA9829-08BF-42DE-ABE3-0B22DB4E1143}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{82BA9829-08BF-42DE-ABE3-0B22DB4E1143}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{82BA9829-08BF-42DE-ABE3-0B22DB4E1143}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{82BA9829-08BF-42DE-ABE3-0B22DB4E1143}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D9CD2037-144A-45C8-A078-F24C93E87E32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D9CD2037-144A-45C8-A078-F24C93E87E32}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D9CD2037-144A-45C8-A078-F24C93E87E32}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D9CD2037-144A-45C8-A078-F24C93E87E32}.Release|Any CPU.Build.0 = Release|Any CPU
-		{26A3E17B-8E3A-4697-9E44-A610D1ECC804}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{26A3E17B-8E3A-4697-9E44-A610D1ECC804}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{26A3E17B-8E3A-4697-9E44-A610D1ECC804}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{26A3E17B-8E3A-4697-9E44-A610D1ECC804}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C33EA998-C211-4A32-90E5-1A1CE8F2ED29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C33EA998-C211-4A32-90E5-1A1CE8F2ED29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C33EA998-C211-4A32-90E5-1A1CE8F2ED29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C33EA998-C211-4A32-90E5-1A1CE8F2ED29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5396FB83-BD55-4D9D-8281-F7A419836E75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5396FB83-BD55-4D9D-8281-F7A419836E75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5396FB83-BD55-4D9D-8281-F7A419836E75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5396FB83-BD55-4D9D-8281-F7A419836E75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2147B0FF-03C7-455B-9DA9-732AA65153E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2147B0FF-03C7-455B-9DA9-732AA65153E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2147B0FF-03C7-455B-9DA9-732AA65153E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2147B0FF-03C7-455B-9DA9-732AA65153E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8D68125-1BED-4579-BAB7-9A64BB2D7457}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8D68125-1BED-4579-BAB7-9A64BB2D7457}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8D68125-1BED-4579-BAB7-9A64BB2D7457}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8D68125-1BED-4579-BAB7-9A64BB2D7457}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{8F7EEAD4-8051-4BF9-8CC4-0834A954DDCB} = {5CB38E0C-B63F-4EEA-A5D7-50910FFF3383}
-		{D9CD2037-144A-45C8-A078-F24C93E87E32} = {5CB38E0C-B63F-4EEA-A5D7-50910FFF3383}
+		{C33EA998-C211-4A32-90E5-1A1CE8F2ED29} = {95A0FF45-6596-45F9-984D-A1E1AD27AB51}
+		{5396FB83-BD55-4D9D-8281-F7A419836E75} = {95A0FF45-6596-45F9-984D-A1E1AD27AB51}
+		{2147B0FF-03C7-455B-9DA9-732AA65153E7} = {95A0FF45-6596-45F9-984D-A1E1AD27AB51}
+		{F8D68125-1BED-4579-BAB7-9A64BB2D7457} = {95A0FF45-6596-45F9-984D-A1E1AD27AB51}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6362A830-3804-4ABB-ADD8-6E112023CB6A}
