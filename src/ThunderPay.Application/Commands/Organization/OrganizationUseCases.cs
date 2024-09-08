@@ -10,20 +10,21 @@ using ThunderPay.Domain.UseCases;
 
 namespace ThunderPay.Application.Commands.Organization;
 
-public class OrganizationUseCases(ThunderPayDbContext db, IOrganizationQuerier organizationQuerier) : IOrganizationUseCases
+public class OrganizationUseCases(ThunderPayDbContext db, IOrganizationQuerier organizationQuerier)
+    : IOrganizationUseCases
 {
     public async Task<OrganizationDto> Upsert(OrganizationDto dto)
     {
         var validationResult = await this.ValidateDto(dto);
-        if(!validationResult.IsValid)
+        if (!validationResult.IsValid)
         {
             throw new ValidationException(validationResult.Errors);
         }
 
-        OrganizationDbm organization = new OrganizationDbm();
-        if(dto.Id > 0)
+        OrganizationDbm organization = new ();
+        if (dto.Id > 0)
         {
-            organization = await db.Organizations.FirstAsync(q  => q.Id == dto.Id);
+            organization = await db.Organizations.FirstAsync(q => q.Id == dto.Id);
         }
         else
         {
@@ -41,7 +42,7 @@ public class OrganizationUseCases(ThunderPayDbContext db, IOrganizationQuerier o
         var validator = new OrganizationDtoValidator();
         var result = validator.Validate(dto);
 
-        var query = db.Organizations.Where(q => q.Name.ToLower() == dto.Name.ToLower());
+        var query = db.Organizations.Where(q => string.Equals(q.Name, dto.Name));
 
         if (dto.Id > 0)
         {

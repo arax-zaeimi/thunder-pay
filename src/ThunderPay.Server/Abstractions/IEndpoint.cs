@@ -1,4 +1,4 @@
-﻿namespace ThunderPay.Api.Abstractions;
+﻿namespace ThunderPay.Server.Abstractions;
 
 public interface IEndpoint
 {

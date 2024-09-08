@@ -1,10 +1,10 @@
 ﻿using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
-using ThunderPay.Api.Abstractions;
 using ThunderPay.Domain.Dtos;
 using ThunderPay.Domain.UseCases;
+using ThunderPay.Server.Abstractions;
 
-namespace ThunderPay.Api.Endpoints.Organization;
+namespace ThunderPay.Server.Endpoints.Organization;
 
 public class CreateUpdateOrganization : IEndpoint
 {
@@ -17,7 +17,7 @@ public class CreateUpdateOrganization : IEndpoint
                 var result = await useCases.Upsert(dto);
                 return Results.Ok(result);
             }
-            catch(ValidationException ex)
+            catch (ValidationException ex)
             {
                 return Results.ValidationProblem(ex.Errors.ToDictionary(e => e.PropertyName, e => new[] { e.ErrorMessage }));
             }

@@ -1,7 +1,7 @@
-﻿using ThunderPay.Api.Abstractions;
-using ThunderPay.Domain.Queriers;
+﻿using ThunderPay.Domain.Queriers;
+using ThunderPay.Server.Abstractions;
 
-namespace ThunderPay.Api.Endpoints.Organization;
+namespace ThunderPay.Server.Endpoints.Organization;
 
 public class GetOrganizations : IEndpoint
 {

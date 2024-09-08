@@ -1,8 +1,8 @@
-using ThunderPay.Api.Endpoints;
 using ThunderPay.Application;
 using ThunderPay.Database;
+using ThunderPay.Server.Endpoints;
 
-namespace ThunderPay.Api;
+namespace ThunderPay.Server;
 public class Program
 {
     private static void Main(string[] args)

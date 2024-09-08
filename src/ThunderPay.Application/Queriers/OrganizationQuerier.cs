@@ -5,7 +5,8 @@ using ThunderPay.Domain.Dtos;
 using ThunderPay.Domain.Queriers;
 
 namespace ThunderPay.Application.Queriers;
-public class OrganizationQuerier(ThunderPayDbContext dbContext) : IOrganizationQuerier
+public class OrganizationQuerier(ThunderPayDbContext dbContext)
+    : IOrganizationQuerier
 {
     public async Task<OrganizationDto> GetById(int id)
     {

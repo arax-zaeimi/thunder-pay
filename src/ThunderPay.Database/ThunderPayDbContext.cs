@@ -3,7 +3,7 @@ using ThunderPay.Domain.Entities;
 
 namespace ThunderPay.Database;
 
-public class ThunderPayDbContext(DbContextOptions<ThunderPayDbContext> options) 
+public class ThunderPayDbContext(DbContextOptions<ThunderPayDbContext> options)
     : DbContext(options)
 {
     public DbSet<MerchantDbm> Merchants { get; set; }

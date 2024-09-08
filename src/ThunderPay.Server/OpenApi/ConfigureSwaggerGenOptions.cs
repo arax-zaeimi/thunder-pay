@@ -3,9 +3,10 @@ using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace ThunderPay.Api.OpenApi;
+namespace ThunderPay.Server.OpenApi;
 
-public class ConfigureSwaggerGenOptions(IApiVersionDescriptionProvider apiVersionDescriptionProvider) : IConfigureNamedOptions<SwaggerGenOptions>
+public class ConfigureSwaggerGenOptions(IApiVersionDescriptionProvider apiVersionDescriptionProvider)
+    : IConfigureNamedOptions<SwaggerGenOptions>
 {
     public void Configure(string? name, SwaggerGenOptions options)
     {
@@ -14,7 +15,7 @@ public class ConfigureSwaggerGenOptions(IApiVersionDescriptionProvider apiVersio
             var openApiInfo = new OpenApiInfo()
             {
                 Title = $"ThunderPay.Api v{description.ApiVersion}",
-                Version = description.ApiVersion.ToString()
+                Version = description.ApiVersion.ToString(),
             };
 
             options.SwaggerDoc(description.GroupName, openApiInfo);

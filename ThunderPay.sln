@@ -8,7 +8,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Solution Items", "_Solutio
 		docker-compose.yaml = docker-compose.yaml
 		README.md = README.md
 		StyleCop.props = StyleCop.props
-		stylecop.ruleset = stylecop.ruleset
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{95A0FF45-6596-45F9-984D-A1E1AD27AB51}"

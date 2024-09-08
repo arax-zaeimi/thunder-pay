@@ -1,11 +1,11 @@
-﻿using Asp.Versioning;
+﻿using System.Reflection;
+using Asp.Versioning;
 using Asp.Versioning.Builder;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using System.Reflection;
-using ThunderPay.Api.Abstractions;
-using ThunderPay.Api.OpenApi;
+using ThunderPay.Server.Abstractions;
+using ThunderPay.Server.OpenApi;
 
-namespace ThunderPay.Api.Endpoints;
+namespace ThunderPay.Server.Endpoints;
 
 public static class EndpointsIoC
 {
@@ -20,14 +20,14 @@ public static class EndpointsIoC
             options.ReportApiVersions = true;
             options.ApiVersionReader = new UrlSegmentApiVersionReader();
         })
-        .AddApiExplorer(options => 
+        .AddApiExplorer(options =>
         {
             options.GroupNameFormat = "'v'V";
             options.SubstituteApiVersionInUrl = true;
         });
 
         services.ConfigureOptions<ConfigureSwaggerGenOptions>();
-        
+
         RegisterEndpointsFromAssembly(services, assembly);
 
         return services;
@@ -35,7 +35,6 @@ public static class EndpointsIoC
 
     public static IApplicationBuilder MapEndpoints(this WebApplication app)
     {
-
         ApiVersionSet apiVersionSet = app.NewApiVersionSet()
             .HasApiVersion(new ApiVersion(1))
             .ReportApiVersions()

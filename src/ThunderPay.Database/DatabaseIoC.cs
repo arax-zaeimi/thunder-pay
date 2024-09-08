@@ -1,7 +1,6 @@
 ﻿using DotNetEnv;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using ThunderPay.Entities;
 
 namespace ThunderPay.Database;
 
