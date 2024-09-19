@@ -28,7 +28,7 @@ jobs:
         run: dotnet publish ./src/ThunderPay.Server/ThunderPay.Server.csproj --configuration Release --output ./publish
 
       - name: Deploy to Azure
-        uses: azure/webapp-deploy@v2
+        uses: azure/webapps-deploy@v2
         with:
           app-name: ${{ env.AZURE_SERVER_APP_NAME }}
           publish-profile: ${{ secrets.SERVER_PUBLISH_PROFILE }}
