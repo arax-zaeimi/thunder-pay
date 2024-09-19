@@ -1,0 +1,22 @@
+# github action to buld and deploy the thunderpay server to azure
+
+name: Deploy Server
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Install dependencies
+        run: dotnet restore ./src/ThunderPay.Server/ThunderPay.Server.csproj
+
+      - name: Build
+        run: dotnet build ./src/ThunderPay.Server/ThunderPay.Server.csproj
