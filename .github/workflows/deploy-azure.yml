@@ -5,6 +5,9 @@ name: Deploy Server
 on:
   workflow_dispatch:
 
+env:
+  AZURE_SERVER_APP_NAME: "thunder-pay"
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,3 +23,13 @@ jobs:
 
       - name: Build
         run: dotnet build ./src/ThunderPay.Server/ThunderPay.Server.csproj
+
+      - name: Publish
+        run: dotnet publish ./src/ThunderPay.Server/ThunderPay.Server.csproj --configuration Release --output ./publish
+
+      - name: Deploy to Azure
+        uses: azure/webapp-deploy@v2
+        with:
+          app-name: ${{ env.AZURE_SERVER_APP_NAME }}
+          publish-profile: ${{ secrets.SERVER_PUBLISH_PROFILE }}
+          package: ./publish
