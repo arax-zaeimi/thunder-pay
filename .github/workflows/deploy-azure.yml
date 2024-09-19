@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_SERVER_APP_NAME: "thunder-pay"
+  SERVER_APP_NAME: "thunder-pay-server"
 
 jobs:
   build:
@@ -30,6 +30,6 @@ jobs:
       - name: Deploy to Azure
         uses: azure/webapps-deploy@v2
         with:
-          app-name: ${{ env.AZURE_SERVER_APP_NAME }}
+          app-name: ${{ env.SERVER_APP_NAME }}
           publish-profile: ${{ secrets.SERVER_PUBLISH_PROFILE }}
           package: ./publish
