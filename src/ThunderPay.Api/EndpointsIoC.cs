@@ -13,28 +13,35 @@ namespace ThunderPay.Api;
 
 public static class EndpointsIoC
 {
-    public static IServiceCollection AddEndpoints(this IServiceCollection services, Assembly assembly)
+    public static IServiceCollection AddEndpoints(this IServiceCollection services)
+    {
+        AddApiVersioning(services);
+        AddSwagger(services);
+        AddEndpointsFromAssembly(services, typeof(EndpointsIoC).Assembly);
+
+        return services;
+    }
+
+    private static void AddSwagger(IServiceCollection services)
+    {
+        services.AddSwaggerGen();
+        services.ConfigureOptions<ConfigureSwaggerGenOptions>();
+    }
+
+    private static void AddApiVersioning(IServiceCollection services)
     {
         services.AddEndpointsApiExplorer();
-        services.AddSwaggerGen();
 
         services.AddApiVersioning(options =>
         {
             options.DefaultApiVersion = new ApiVersion(1);
             options.ReportApiVersions = true;
             options.ApiVersionReader = new UrlSegmentApiVersionReader();
-        })
-        .AddApiExplorer(options =>
+        }).AddApiExplorer(options =>
         {
             options.GroupNameFormat = "'v'V";
             options.SubstituteApiVersionInUrl = true;
         });
-
-        services.ConfigureOptions<ConfigureSwaggerGenOptions>();
-
-        RegisterEndpointsFromAssembly(services, assembly);
-
-        return services;
     }
 
     public static IApplicationBuilder MapEndpoints(this WebApplication app)
@@ -79,7 +86,7 @@ public static class EndpointsIoC
         }
     }
 
-    private static void RegisterEndpointsFromAssembly(IServiceCollection services, Assembly assembly)
+    private static void AddEndpointsFromAssembly(IServiceCollection services, Assembly assembly)
     {
         ServiceDescriptor[] serviceDescriptors = assembly
                     .DefinedTypes

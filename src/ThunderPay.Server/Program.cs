@@ -15,15 +15,13 @@ public class Program
 
         DatabaseIoC.RegisterDatabaseServices(builder.Services);
         ApplicationIoC.RegisterServices(builder.Services);
-
-        EndpointsIoC.AddEndpoints(builder.Services, typeof(Program).Assembly);
+        EndpointsIoC.AddEndpoints(builder.Services);
 
         var app = builder.Build();
 
         app.UseExceptionHandler();
 
         DatabaseIoC.Initialize(app.Services);
-
         EndpointsIoC.MapEndpoints(app);
 
         app.Run();
