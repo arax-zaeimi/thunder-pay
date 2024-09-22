@@ -22,6 +22,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThunderPay.Application", "s
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThunderPay.Server", "src\ThunderPay.Server\ThunderPay.Server.csproj", "{F8D68125-1BED-4579-BAB7-9A64BB2D7457}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThunderPay.Api", "src\ThunderPay.Api\ThunderPay.Api.csproj", "{B6B4436D-2644-4F00-8B9B-09931B8E418D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{F8D68125-1BED-4579-BAB7-9A64BB2D7457}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8D68125-1BED-4579-BAB7-9A64BB2D7457}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8D68125-1BED-4579-BAB7-9A64BB2D7457}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6B4436D-2644-4F00-8B9B-09931B8E418D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6B4436D-2644-4F00-8B9B-09931B8E418D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6B4436D-2644-4F00-8B9B-09931B8E418D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6B4436D-2644-4F00-8B9B-09931B8E418D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +59,7 @@ Global
 		{5396FB83-BD55-4D9D-8281-F7A419836E75} = {95A0FF45-6596-45F9-984D-A1E1AD27AB51}
 		{2147B0FF-03C7-455B-9DA9-732AA65153E7} = {95A0FF45-6596-45F9-984D-A1E1AD27AB51}
 		{F8D68125-1BED-4579-BAB7-9A64BB2D7457} = {95A0FF45-6596-45F9-984D-A1E1AD27AB51}
+		{B6B4436D-2644-4F00-8B9B-09931B8E418D} = {95A0FF45-6596-45F9-984D-A1E1AD27AB51}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6362A830-3804-4ABB-ADD8-6E112023CB6A}
