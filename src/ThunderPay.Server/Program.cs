@@ -1,6 +1,6 @@
+using ThunderPay.Api;
 using ThunderPay.Application;
 using ThunderPay.Database;
-using ThunderPay.Server.Endpoints;
 
 namespace ThunderPay.Server;
 public class Program

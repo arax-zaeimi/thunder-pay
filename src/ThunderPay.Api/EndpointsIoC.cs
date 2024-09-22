@@ -1,11 +1,15 @@
-﻿using System.Reflection;
-using Asp.Versioning;
+﻿using Asp.Versioning;
 using Asp.Versioning.Builder;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Routing;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using ThunderPay.Server.Abstractions;
-using ThunderPay.Server.OpenApi;
+using Microsoft.Extensions.Hosting;
+using System.Reflection;
+using ThunderPay.Api.Endpoints;
+using ThunderPay.Api.OpenApi;
 
-namespace ThunderPay.Server.Endpoints;
+namespace ThunderPay.Api;
 
 public static class EndpointsIoC
 {
