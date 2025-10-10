@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 namespace ThunderPay.Database.Sagas.EftSubmission;
 
 [Table("eftSubmissionSagaState")]
-public class EftSubmissionSagaStateDbm : SagaStateMachineInstance
+public class EftSubmissionSagaStateDbm : TimeStampedEntity, SagaStateMachineInstance
 {
     public Guid CorrelationId { get; set; }
 

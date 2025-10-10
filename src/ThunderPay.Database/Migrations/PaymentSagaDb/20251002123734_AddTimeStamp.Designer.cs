@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using ThunderPay.Database.Sagas;
@@ -11,9 +12,11 @@ using ThunderPay.Database.Sagas;
 namespace ThunderPay.Database.Migrations.PaymentSagaDb
 {
     [DbContext(typeof(PaymentSagaDbContext))]
-    partial class PaymentSagaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251002123734_AddTimeStamp")]
+    partial class AddTimeStamp
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

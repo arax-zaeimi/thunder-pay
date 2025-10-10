@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.10.35122.118
+# Visual Studio Version 18
+VisualStudioVersion = 18.0.11010.61 d18.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Solution Items", "_Solution Items", "{0A60008D-2DE9-45C1-985B-FB1993ECFA89}"
 	ProjectSection(SolutionItems) = preProject
@@ -25,6 +25,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThunderPay.Api", "src\ThunderPay.Api\ThunderPay.Api.csproj", "{1FF2DF02-CD9B-418B-BDC2-4BB038DA0738}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThunderPay.Shared", "src\ThunderPay.Shared\ThunderPay.Shared.csproj", "{CCC2BC54-411C-5A13-2214-EE30C76A2CAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThunderPay.Application.Test.Unit", "ThunderPay.Application.Test.Unit\ThunderPay.Application.Test.Unit.csproj", "{7F097C80-B5A7-4A97-8115-F106DACDC970}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,6 +58,10 @@ Global
 		{CCC2BC54-411C-5A13-2214-EE30C76A2CAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCC2BC54-411C-5A13-2214-EE30C76A2CAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCC2BC54-411C-5A13-2214-EE30C76A2CAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F097C80-B5A7-4A97-8115-F106DACDC970}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F097C80-B5A7-4A97-8115-F106DACDC970}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F097C80-B5A7-4A97-8115-F106DACDC970}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F097C80-B5A7-4A97-8115-F106DACDC970}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,6 +73,7 @@ Global
 		{9F7A2957-3115-4935-A1CD-6B3C71D6EF0E} = {95A0FF45-6596-45F9-984D-A1E1AD27AB51}
 		{1FF2DF02-CD9B-418B-BDC2-4BB038DA0738} = {95A0FF45-6596-45F9-984D-A1E1AD27AB51}
 		{CCC2BC54-411C-5A13-2214-EE30C76A2CAA} = {95A0FF45-6596-45F9-984D-A1E1AD27AB51}
+		{7F097C80-B5A7-4A97-8115-F106DACDC970} = {67519B42-5BCC-48F9-BA45-CF3C6169AC54}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6362A830-3804-4ABB-ADD8-6E112023CB6A}
