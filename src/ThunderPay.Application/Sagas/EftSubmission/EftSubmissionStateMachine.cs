@@ -5,7 +5,7 @@ using ThunderPay.Database.Sagas.EftSubmission;
 
 namespace ThunderPay.Application.Sagas.EftSubmission;
 
-internal class EftSubmissionStateMachine : MassTransitStateMachine<EftSubmissionSagaStateDbm>
+public class EftSubmissionStateMachine : MassTransitStateMachine<EftSubmissionSagaStateDbm>
 {
     public EftSubmissionStateMachine()
     {
